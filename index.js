@@ -21,6 +21,13 @@ app.use(logger('dev'));
 var methodOverride = require('method-override');
 app.use(methodOverride('_method'));
 
+app.get('/', function(req, res){
+  res.render('./index')
+});
+app.get('/terms', function(req, res){
+  res.render('./terms')
+})
+
 // use controller 
 var termsController = require('./controllers/termsController');
 app.use(termsController);
